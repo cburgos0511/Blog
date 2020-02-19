@@ -64,3 +64,6 @@ public
 
 
 cms/
+
+# Local Netlify folder
+.netlify
