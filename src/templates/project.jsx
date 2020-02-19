@@ -31,7 +31,12 @@ const ProjectTemplate = ({ data }) => (
       by <Link to="/about">{data.strapiProject.builder.username}</Link>
     </p>
     <Img fixed={data.strapiProject.img.childImageSharp.fixed} />
-    <ReactMarkdown source={data.strapiProject.content} />
+    <ReactMarkdown
+      source={data.strapiProject.content}
+      transformImageUri={uri =>
+        uri.startsWith("http") ? uri : `${process.env.IMAGE_BASE_URL}${uri}`
+      }
+    />
   </Layout>
 )
 

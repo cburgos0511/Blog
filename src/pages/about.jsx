@@ -30,7 +30,14 @@ const About = ({ data }) => (
         <div>
           <h1>{doc.node.author}</h1>
           <Img fixed={doc.node.img.childImageSharp.fixed} />
-          <ReactMarkdown source={doc.node.aboutMe} />
+          <ReactMarkdown
+            source={doc.node.aboutMe}
+            transformImageUri={uri =>
+              uri.startsWith("http")
+                ? uri
+                : `${process.env.IMAGE_BASE_URL}${uri}`
+            }
+          />
         </div>
       ))}
     </>
