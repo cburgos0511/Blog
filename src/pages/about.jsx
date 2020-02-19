@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
+import ReactMarkdown from "react-markdown"
 
 export const bioQuery = graphql`
   query BioQuery {
@@ -29,7 +30,7 @@ const About = ({ data }) => (
         <div>
           <h1>{doc.node.author}</h1>
           <Img fixed={doc.node.img.childImageSharp.fixed} />
-          <p>{doc.node.aboutMe}</p>
+          <ReactMarkdown source={doc.node.aboutMe} />
         </div>
       ))}
     </>
