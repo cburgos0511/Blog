@@ -56,6 +56,10 @@
     "articles": {
       "via": "user",
       "collection": "article"
+    },
+    "projects": {
+      "via": "builder",
+      "collection": "project"
     }
   }
 }

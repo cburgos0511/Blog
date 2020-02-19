@@ -1,13 +1,38 @@
 import React from "react"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Img from "gatsby-image"
 
-const About = () => (
+export const bioQuery = graphql`
+  query BioQuery {
+    allStrapiBio {
+      edges {
+        node {
+          aboutMe
+          author
+          img {
+            childImageSharp {
+              fixed(width: 400, height: 325) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+const About = ({ data }) => (
   <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
+    <>
+      {data.allStrapiBio.edges.map(doc => (
+        <div>
+          <h1>{doc.node.author}</h1>
+          <Img fixed={doc.node.img.childImageSharp.fixed} />
+          <p>{doc.node.aboutMe}</p>
+        </div>
+      ))}
+    </>
   </Layout>
 )
 

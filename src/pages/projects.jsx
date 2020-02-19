@@ -1,13 +1,49 @@
 import React from "react"
-
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Img from "gatsby-image"
 
-const Project = () => (
+export const articleQuery = graphql`
+  query MyProjects {
+    allStrapiProject {
+      edges {
+        node {
+          id
+          title
+          time
+          description
+          builder {
+            username
+          }
+          img {
+            childImageSharp {
+              fixed(width: 300, height: 225) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+const Project = ({ data }) => (
   <Layout>
-    <SEO title="Page two" />
-    <h1>Hi I am the Test page</h1>
-    <p>Welcome to Test Page</p>
+    <h1>Welcome to my Projects</h1>
+    <p>Projects Stuff</p>
+    <ul>
+      {data.allStrapiProject.edges.map(doc => (
+        <li key={doc.node.id}>
+          <h2>
+            <Link to={`/${doc.node.id}/`}>{doc.node.title}</Link>
+          </h2>
+          <Img fixed={doc.node.img.childImageSharp.fixed} />
+          <p>{doc.node.description}</p>
+          <h6>Built by: {doc.node.builder.username}</h6>
+        </li>
+      ))}
+    </ul>
   </Layout>
 )
 
