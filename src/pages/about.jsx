@@ -13,7 +13,7 @@ export const bioQuery = graphql`
           author
           img {
             childImageSharp {
-              fixed(width: 400, height: 325) {
+              fixed(width: 600, height: 525) {
                 ...GatsbyImageSharpFixed
               }
             }
@@ -28,8 +28,10 @@ const About = ({ data }) => (
     <>
       {data.allStrapiBio.edges.map(doc => (
         <div>
-          <h1>{doc.node.author}</h1>
-          <Img fixed={doc.node.img.childImageSharp.fixed} />
+          <h1 style={{ textAlign: "center" }}>{doc.node.author}</h1>
+          <div style={{ margin: "0 auto" }}>
+            <Img fixed={doc.node.img.childImageSharp.fixed} />
+          </div>
           <ReactMarkdown
             source={doc.node.aboutMe}
             transformImageUri={uri =>

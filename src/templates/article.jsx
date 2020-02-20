@@ -7,9 +7,7 @@ import ReactMarkdown from "react-markdown"
 const ArticleTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArticle.title}</h1>
-    <p>
-      by <Link to="/about">{data.strapiArticle.user.username}</Link>
-    </p>
+
     <Img fixed={data.strapiArticle.img.childImageSharp.fixed} />
     <ReactMarkdown
       source={data.strapiArticle.content}
@@ -17,6 +15,9 @@ const ArticleTemplate = ({ data }) => (
         uri.startsWith("http") ? uri : `${process.env.IMAGE_BASE_URL}${uri}`
       }
     />
+    <p>
+      by <Link to="/about">{data.strapiArticle.user.username}</Link>
+    </p>
   </Layout>
 )
 
