@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
+import "./pages.css"
 
 export const bioQuery = graphql`
   query BioQuery {
@@ -28,11 +29,15 @@ const About = ({ data }) => (
     <>
       {data.allStrapiBio.edges.map(doc => (
         <div>
-          <h1 style={{ textAlign: "center" }}>{doc.node.author}</h1>
+          <h1 className="header">{doc.node.author}</h1>
           <div style={{ margin: "0 auto" }}>
-            <Img fixed={doc.node.img.childImageSharp.fixed} />
+            <Img
+              style={{ display: "block", margin: "auto" }}
+              fixed={doc.node.img.childImageSharp.fixed}
+            />
           </div>
           <ReactMarkdown
+            className="bio-content"
             source={doc.node.aboutMe}
             transformImageUri={uri =>
               uri.startsWith("http")

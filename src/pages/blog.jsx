@@ -30,8 +30,7 @@ export const articleQuery = graphql`
 
 const Blog = ({ data }) => (
   <Layout>
-    <h1>Welcome to my Blog</h1>
-    <p>Blog stuff</p>
+    <h1 className="header">Blog</h1>
     <ul>
       {data.allStrapiArticle.edges.map(doc => (
         <li key={doc.node.id}>
@@ -40,7 +39,7 @@ const Blog = ({ data }) => (
           </h2>
           <Img fixed={doc.node.img.childImageSharp.fixed} />
           <p>{doc.node.description}</p>
-          <h6>Written by: {doc.node.user.username}</h6>
+          <h6 className='creator'>Written by: {doc.node.user.username}</h6>
         </li>
       ))}
     </ul>

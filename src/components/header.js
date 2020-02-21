@@ -5,14 +5,16 @@ import styled from "styled-components"
 
 const Ul = styled.ul`
   display: flex;
-  margin: 25px 0 0 800px;
+  margin: 15px auto 5px auto;
+  .mr-left {
+    margin-left: 8vw;
+  }
   li {
     cursor: pointer;
     list-style: none;
-    margin-left: 2rem;
 
     a {
-      color: white;
+      color: #000;
       text-decoration: none;
     }
   }
@@ -24,13 +26,13 @@ const navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
+      <li className="mr-left">
         <Link to="/about/">About</Link>
       </li>
-      <li>
+      <li className="mr-left">
         <Link to="/blog/">Blogs</Link>
       </li>
-      <li>
+      <li className="mr-left">
         <Link to="/projects/">Projects</Link>
       </li>
     </Ul>
@@ -40,40 +42,11 @@ const navbar = () => {
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#f3f3f3`,
       marginBottom: `.6rem`,
       display: "flex",
     }}
   >
-    <div
-      style={{
-        maxWidth: 400,
-        margin: "0 0 0 20px",
-        padding: `.75rem .0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-    <div
-      style={{
-        textAlign: "right",
-
-        margin: `auto 20px auto 0`,
-        maxWidth: 700,
-        padding: `1.45rem 1.0875rem`,
-        height: "auto",
-      }}
-    ></div>
     {navbar()}
   </header>
 )

@@ -30,8 +30,7 @@ export const articleQuery = graphql`
 
 const Project = ({ data }) => (
   <Layout>
-    <h1>Welcome to my Projects</h1>
-    <p>Projects Stuff</p>
+    <h1 className="header">Projects</h1>
     <ul>
       {data.allStrapiProject.edges.map(doc => (
         <li key={doc.node.id}>
@@ -40,7 +39,7 @@ const Project = ({ data }) => (
           </h2>
           <Img fixed={doc.node.img.childImageSharp.fixed} />
           <p>{doc.node.description}</p>
-          <h6>Built by: {doc.node.builder.username}</h6>
+          <h6 className="creator">Built by: {doc.node.builder.username}</h6>
         </li>
       ))}
     </ul>

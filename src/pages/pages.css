@@ -1,0 +1,21 @@
+.bio-content {
+  text-align: center;
+  padding-top: 2vh;
+}
+
+.bio-content h2 {
+  font-weight: 300;
+}
+
+.header {
+  margin: 12vh auto 12vh auto;
+  font-size: 11vh;
+  text-align: center;
+  font-weight: 100;
+  font-family: "Allura";
+}
+
+.creator {
+  font-weight: 200;
+  font-size: 12px;
+}
