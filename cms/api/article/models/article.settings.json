@@ -35,6 +35,9 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "category": {
+      "type": "string"
     }
   }
 }
