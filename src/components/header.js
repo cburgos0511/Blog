@@ -16,6 +16,10 @@ const Ul = styled.ul`
     a {
       color: #000;
       text-decoration: none;
+      text-transform: uppercase;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 800;
     }
   }
 `
@@ -39,10 +43,10 @@ const navbar = () => {
   )
 }
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header
     style={{
-      background: `#f3f3f3`,
+      background: `#fcfcfc`,
       marginBottom: `.6rem`,
       display: "flex",
     }}

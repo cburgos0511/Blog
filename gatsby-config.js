@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Allura`, `Alex Brush`],
+        fonts: [`Allura`, "Roboto:100,300,700"],
         display: "swap",
       },
     },

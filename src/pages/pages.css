@@ -1,21 +1,65 @@
+.container-about {
+  display: flex;
+}
+
 .bio-content {
-  text-align: center;
-  padding-top: 2vh;
+  text-align: left;
+  width: 40vw;
+  margin-left: 8vw;
+}
+/* .bio-content::before {
+  font-size: 13px;
+  position: absolute;
+  content: "FIND OUT MORE ABOUT ME";
+  transform: rotate(-90deg);
+  top: 50%;
+  left: -3%;
+  color: #72727277;
+  letter-spacing: 2px;
+} */
+
+.content-wrapper {
+  position: relative;
 }
 
 .bio-content h2 {
   font-weight: 300;
 }
 
+.bio-content p {
+  font-weight: 300;
+  font-size: 16px;
+}
+
 .header {
   margin: 12vh auto 12vh auto;
-  font-size: 11vh;
+  font-size: 8vh;
   text-align: center;
   font-weight: 100;
-  font-family: "Allura";
+  font-family: "Roboto";
+  /* -webkit-text-stroke: 1px; */
+  color: black;
 }
 
 .creator {
   font-weight: 200;
   font-size: 12px;
+}
+
+.about-img {
+  display: block;
+  margin: 10px 15px;
+  transform: translateY(0vh);
+}
+
+.about-img::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  border: 1.2px solid rgb(255, 161, 54);
+  width: 500px;
+  height: 425px;
+  z-index: -1;
+  transform: translate(-5%, 8%);
 }
