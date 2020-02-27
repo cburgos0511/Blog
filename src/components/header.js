@@ -10,6 +10,7 @@ const Ul = styled.ul`
     margin-left: 8vw;
   }
   li {
+    position: relative;
     cursor: pointer;
     list-style: none;
 
@@ -21,6 +22,18 @@ const Ul = styled.ul`
       font-size: 16px;
       font-weight: 800;
     }
+    .active {
+      &::before {
+        content: "";
+        position: absolute;
+        opacity: 0.4;
+        left: -15%;
+        width: 130%;
+        height: 60%;
+        bottom: 10%;
+        background: #97bdb9;
+      }
+    }
   }
 `
 
@@ -28,16 +41,24 @@ const navbar = () => {
   return (
     <Ul>
       <li>
-        <Link to="/">Home</Link>
+        <Link activeClassName="active" to="/">
+          Home
+        </Link>
       </li>
       <li className="mr-left">
-        <Link to="/about/">About</Link>
+        <Link activeClassName="active" to="/about/">
+          About
+        </Link>
       </li>
       <li className="mr-left">
-        <Link to="/blog/">Blogs</Link>
+        <Link activeClassName="active" to="/blog/">
+          Blogs
+        </Link>
       </li>
       <li className="mr-left">
-        <Link to="/projects/">Projects</Link>
+        <Link activeClassName="active" to="/projects/">
+          Projects
+        </Link>
       </li>
     </Ul>
   )

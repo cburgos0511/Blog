@@ -14,7 +14,7 @@ export const bioQuery = graphql`
           author
           img {
             childImageSharp {
-              fixed(width: 500, height: 425) {
+              fixed(width: 500, height: 600) {
                 ...GatsbyImageSharpFixed
               }
             }

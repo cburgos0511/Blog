@@ -34,6 +34,29 @@ const ImageList = styled.ul`
   }
 `
 
+const Blog = ({ data }) => (
+  <Layout>
+    <h1 className="header">Blog</h1>
+    <ImageList>
+      {data.allStrapiArticle.edges.map(doc => (
+        <Link key={doc.node.id} to={`/${doc.node.id}/`}>
+          <li>
+            <div className="img-wrapper">
+              <Img
+                className="blog-img"
+                fixed={doc.node.img.childImageSharp.fixed}
+              />
+            </div>
+            <h6>{doc.node.category}</h6>
+            <h2>{doc.node.title}</h2>
+            {/* <p>{doc.node.description}</p> */}
+          </li>
+        </Link>
+      ))}
+    </ImageList>
+  </Layout>
+)
+
 export const articleQuery = graphql`
   query MyQuery {
     allStrapiArticle {
@@ -59,30 +82,5 @@ export const articleQuery = graphql`
     }
   }
 `
-
-const Blog = ({ data }) => (
-  <Layout>
-    <h1 className="header">Blog</h1>
-    <ImageList>
-      {data.allStrapiArticle.edges.map(doc => (
-        <Link to={`/${doc.node.id}/`}>
-          <li key={doc.node.id}>
-            <div className="img-wrapper">
-              <Img
-                className="blog-img"
-                fixed={doc.node.img.childImageSharp.fixed}
-              />
-            </div>
-
-            <h6>{doc.node.category}</h6>
-            <h2>{doc.node.title}</h2>
-
-            {/* <p>{doc.node.description}</p> */}
-          </li>
-        </Link>
-      ))}
-    </ImageList>
-  </Layout>
-)
 
 export default Blog

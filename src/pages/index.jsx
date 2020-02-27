@@ -1,19 +1,172 @@
 import React from "react"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import styled from "styled-components"
+import "./pages.css"
+import FeatureBlog from "../components/featureBlog"
 
-const Home = () => (
+const Welcome = styled.div`
+  .intro {
+    text-shadow: -20px 20px 20px rgba(255, 255, 255, 0.2),
+      0 20px 50px rgba(255, 255, 255, 0.2);
+    position: relative;
+    margin: 20vh 0 1vh 0;
+    letter-spacing: -2px;
+    .inline {
+      display: flex;
+      width: 80vw;
+      margin: 0 10vw 0 10vw;
+      height: 20vh;
+      font-size: 11vw;
+      font-weight: 500;
+    }
+  }
+`
+
+const Icons = styled.div`
+  width: 40vw;
+  margin: auto;
+  position: relative;
+  ul {
+    display: flex;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10vw;
+      height: 1px;
+      background: #97bdb9;
+      left: -9vw;
+      top: 13px;
+    }
+    li {
+      list-style: none;
+      padding-left: 2rem;
+      a {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: 700;
+        transition: all 500ms ease-in-out;
+        &:hover {
+          color: #97bdb9;
+        }
+      }
+    }
+  }
+`
+
+const Home = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to my site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    {console.log(data)}
+    <Welcome>
+      <div className="intro">
+        <div className="inline">
+          <div>F</div>
+          <div>a</div>
+          <div>i</div>
+          <div>t</div>
+          <div>h</div>
+          <div>. </div>
+          <div>F</div>
+          <div>a</div>
+          <div>m</div>
+          <div>i</div>
+          <div>l</div>
+          <div>y</div>
+          <div>. </div>
+        </div>
+        <div className="inline">
+          <div>N</div>
+          <div>a</div>
+          <div>p</div>
+          <div>s</div>
+          <div>. </div>
+          <div>A</div>
+          <div>r</div>
+          <div>t</div>
+          <div>. </div>
+        </div>
+        <div className="inline">
+          <div>U</div>
+          <div>p</div>
+          <div>h</div>
+          <div>o</div>
+          <div>l</div>
+          <div>s</div>
+          <div>t</div>
+          <div>e</div>
+          <div>r</div>
+          <div>y</div>
+          <div>.</div>
+        </div>
+      </div>
+      <Icons>
+        <ul>
+          <li>
+            <a href="/">In</a>
+          </li>
+          <li>
+            <a href="/">F</a>
+          </li>
+          <li>
+            <a href="/">P</a>
+          </li>
+          <li>
+            <a href="/">G</a>
+          </li>
+        </ul>
+      </Icons>
+    </Welcome>
+    <FeatureBlog data={data.allStrapiArticle} />
+    <FeatureBlog data={data.allStrapiProject} />
   </Layout>
 )
+export const featureQuery = graphql`
+  query query {
+    allStrapiArticle {
+      edges {
+        node {
+          description
+          id
+          published
+          title
+          category
+          user {
+            username
+          }
+          img {
+            childImageSharp {
+              fixed(width: 575, height: 425) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+      }
+    }
+    allStrapiProject {
+      edges {
+        node {
+          id
+          title
+          time
+          category
+          description
+          builder {
+            username
+          }
+          img {
+            childImageSharp {
+              fixed(width: 575, height: 425) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Home
