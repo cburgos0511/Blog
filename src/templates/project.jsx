@@ -27,9 +27,7 @@ export const query = graphql`
 const ProjectTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiProject.title}</h1>
-    <p>
-      by <Link to="/about">{data.strapiProject.builder.username}</Link>
-    </p>
+
     <Img fixed={data.strapiProject.img.childImageSharp.fixed} />
     <ReactMarkdown
       source={data.strapiProject.content}
@@ -37,6 +35,9 @@ const ProjectTemplate = ({ data }) => (
         uri.startsWith("http") ? uri : `${process.env.IMAGE_BASE_URL}${uri}`
       }
     />
+    <p>
+      by <Link to="/about">{data.strapiProject.builder.username}</Link>
+    </p>
   </Layout>
 )
 

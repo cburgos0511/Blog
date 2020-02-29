@@ -9,16 +9,6 @@
   width: 40vw;
   margin-left: 1vw;
 }
-/* .bio-content::before {
-  font-size: 13px;
-  position: absolute;
-  content: "FIND OUT MORE ABOUT ME";
-  transform: rotate(-90deg);
-  top: 50%;
-  left: -3%;
-  color: #72727277;
-  letter-spacing: 2px;
-} */
 
 .content-wrapper {
   position: relative;
@@ -77,3 +67,8 @@
   z-index: 2;
   box-shadow: 3px 20px 78px -50px rgba(0, 0, 0, 0.75);
 }
+
+/* FEATURE */
+
+
+

@@ -21,6 +21,19 @@ const Welcome = styled.div`
       font-weight: 500;
     }
   }
+  .little-about-me {
+    position: relative;
+    margin: 0 0 5rem 22vw;
+    width: 50vw;
+
+    h2 {
+      padding-top: 5vh;
+      font-size: 19px;
+      font-weight: 400;
+      color: #525252;
+      line-height: 1.8;
+    }
+  }
 `
 
 const Icons = styled.div`
@@ -117,11 +130,23 @@ const Home = ({ data }) => (
           </li>
         </ul>
       </Icons>
+      <div className="little-about-me">
+        <h2>
+          My name is <b>Christine</b>
+          <b> Burgos</b>. I’m a lifelong <b>Omaha</b> native,
+          <b> one of six children</b>, believer in the saving work of the
+          <b> Lord Jesus Christ</b>. Welcome to my site. Here I intend to
+          catalog and share my endeavors in <b>upholstery</b>, <b>cooking</b>,
+          and <b>homemaking</b>. As well as this new stage I’m starting as a
+          <b> wife and mother.</b>
+        </h2>
+      </div>
     </Welcome>
-    <FeatureBlog data={data.allStrapiArticle} />
-    <FeatureBlog data={data.allStrapiProject} />
+    <FeatureBlog data={data.allStrapiArticle} title="Latest Blogs" />
+    <FeatureBlog data={data.allStrapiProject} title="Latest Projects" />
   </Layout>
 )
+
 export const featureQuery = graphql`
   query query {
     allStrapiArticle {

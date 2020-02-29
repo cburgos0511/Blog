@@ -4,9 +4,36 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import "../pages/pages.css"
 
+const FeatureContainer = styled.div`
+  position: relative;
+  &::before {
+    content: "";
+    top: -30%;
+    position: absolute;
+    width: 20vw;
+    height: 1.2px;
+    left: 50%;
+    background: #6d8a87;
+    transform: translate(-50%);
+  }
+  .title-wrap {
+    width: 50%;
+    margin-top: 30%;
+    margin-left: 5vw;
+
+    .title {
+      font-size: 10vh;
+      font-weight: 400;
+    }
+  }
+`
 const ImageList = styled.ul`
   display: flex;
   flex-flow: row wrap;
+  margin-top: 15vh;
+  margin-bottom: 30vh;
+  h1 {
+  }
   a {
     text-decoration: none;
     color: #000;
@@ -33,9 +60,12 @@ const ImageList = styled.ul`
   }
 `
 
-const FeatureBlog = ({ data }) => {
+const FeatureBlog = ({ data, title }) => {
   return (
-    <>
+    <FeatureContainer>
+      <div className="title-wrap">
+        <h1 className="title"> {title}</h1>
+      </div>
       <ImageList>
         {data.edges.slice(0, 2).map(doc => (
           <Link to={`/${doc.node.id}/`}>
@@ -55,7 +85,7 @@ const FeatureBlog = ({ data }) => {
           </Link>
         ))}
       </ImageList>
-    </>
+    </FeatureContainer>
   )
 }
 
