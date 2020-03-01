@@ -22,6 +22,7 @@ const FeatureContainer = styled.div`
     margin-left: 5vw;
 
     .title {
+      font-family: PT serif;
       font-size: 10vh;
       font-weight: 400;
     }
@@ -31,7 +32,6 @@ const ImageList = styled.ul`
   display: flex;
   flex-flow: row wrap;
   margin-top: 15vh;
-  margin-bottom: 30vh;
   h1 {
   }
   a {

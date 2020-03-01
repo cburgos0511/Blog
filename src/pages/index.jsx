@@ -19,14 +19,15 @@ const Welcome = styled.div`
       height: 20vh;
       font-size: 11vw;
       font-weight: 500;
+      font-family: PT serif;
     }
   }
   .little-about-me {
     position: relative;
     margin: 0 0 5rem 22vw;
     width: 50vw;
-
     h2 {
+      font-family: PT serif;
       padding-top: 5vh;
       font-size: 19px;
       font-weight: 400;

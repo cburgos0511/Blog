@@ -8,7 +8,7 @@ import styled from "styled-components"
 
 const Footer = styled.footer`
   position: relative;
-  margin-top: 30vh;
+  margin-top: 0vh;
   height: 40vh;
 `
 const FootContent = styled.ul`
@@ -22,7 +22,7 @@ const FootContent = styled.ul`
       left: 50%;
       width: 30px;
       height: 30px;
-      border: 2px #525252 solid;
+      border: 2px #97bdb9 solid;
       transform: rotate(45deg);
     }
   }
@@ -117,7 +117,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          margin: `0 auto`,
+          margin: `0 auto 20vh auto`,
           maxWidth: "90vw",
           padding: `0 1.0875rem 1.45rem`,
         }}

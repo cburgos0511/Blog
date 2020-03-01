@@ -3,12 +3,22 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-const Ul = styled.ul`
-  display: flex;
-  margin: 15px auto 5px auto;
-  .mr-left {
-    margin-left: 8vw;
+const Head = styled.header`
+  background: #fcfcfc;
+  .navbar {
+    width: 50%;
+    margin: 0 auto 0 auto;
   }
+`
+
+const Ul = styled.ul`
+  margin-block-start: 0;
+  margin-block-end: 0;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-around;
+  margin-left: 0;
+
   li {
     position: relative;
     cursor: pointer;
@@ -21,6 +31,20 @@ const Ul = styled.ul`
       font-family: Roboto;
       font-size: 16px;
       font-weight: 800;
+      &::before {
+        content: "";
+        position: absolute;
+        opacity: 0.4;
+        right: -15%;
+        width: 0%;
+        height: 60%;
+        bottom: 10%;
+        background: #97bdb9;
+        transition: all 500ms ease;
+      }
+      &:hover::before {
+        width: 130%;
+      }
     }
     .active {
       &::before {
@@ -45,17 +69,17 @@ const navbar = () => {
           Home
         </Link>
       </li>
-      <li className="mr-left">
+      <li>
         <Link activeClassName="active" to="/about/">
           About
         </Link>
       </li>
-      <li className="mr-left">
+      <li>
         <Link activeClassName="active" to="/blog/">
           Blogs
         </Link>
       </li>
-      <li className="mr-left">
+      <li>
         <Link activeClassName="active" to="/projects/">
           Projects
         </Link>
@@ -65,15 +89,9 @@ const navbar = () => {
 }
 
 const Header = () => (
-  <header
-    style={{
-      background: `#fcfcfc`,
-      marginBottom: `.6rem`,
-      display: "flex",
-    }}
-  >
-    {navbar()}
-  </header>
+  <Head>
+    <nav class="navbar">{navbar()}</nav>
+  </Head>
 )
 
 Header.propTypes = {

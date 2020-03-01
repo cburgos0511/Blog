@@ -19,6 +19,7 @@
 }
 
 .bio-content p {
+  font-family: PT serif;
   font-weight: 300;
   font-size: 16px;
 }
@@ -28,8 +29,7 @@
   font-size: 8vh;
   text-align: center;
   font-weight: 100;
-  font-family: "Roboto";
-  /* -webkit-text-stroke: 1px; */
+  font-family: PT serif;
   color: black;
 }
 
@@ -67,8 +67,3 @@
   z-index: 2;
   box-shadow: 3px 20px 78px -50px rgba(0, 0, 0, 0.75);
 }
-
-/* FEATURE */
-
-
-

@@ -10,7 +10,7 @@ const blur = keyframes`
   filter: blur(0);
 }
 50% {
-  filter: blur(2px);
+  filter: blur(1px);
 
 }
 
@@ -59,10 +59,12 @@ const ProjectList = styled.ul`
     .cont {
       margin-top: 10vh;
       h2 {
+        font-family: PT serif;
         font-size: 6vh;
         margin-bottom: 6vh;
       }
       p {
+        font-family: PT serif;
         margin-top: 4vh;
         width: 20vw;
       }
