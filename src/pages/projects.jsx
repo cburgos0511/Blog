@@ -104,8 +104,8 @@ const Project = ({ data }) => (
       {data.allStrapiProject.edges.map((doc, i) => {
         const project =
           i % 2 === 0 ? (
-            <Link to={`/${doc.node.id}/`}>
-              <li key={doc.node.id}>
+            <Link key={doc.node.id} to={`/${doc.node.id}/`}>
+              <li>
                 <div className="img-wrap">
                   <Img fixed={doc.node.img.childImageSharp.fixed} />
                 </div>
@@ -117,7 +117,7 @@ const Project = ({ data }) => (
               </li>
             </Link>
           ) : (
-            <Link to={`/${doc.node.id}/`}>
+            <Link key={doc.node.id} to={`/${doc.node.id}/`}>
               <li className="lefty" key={doc.node.id}>
                 <div className="cont left">
                   <h2>{doc.node.title}</h2>

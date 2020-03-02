@@ -72,7 +72,6 @@ const Icons = styled.div`
 
 const Home = ({ data }) => (
   <Layout>
-    {console.log(data)}
     <Welcome>
       <div className="intro">
         <div className="inline">
@@ -118,16 +117,16 @@ const Home = ({ data }) => (
       <Icons>
         <ul>
           <li>
-            <a href="/">In</a>
+            <a href="\">In</a>
           </li>
           <li>
-            <a href="/">F</a>
+            <a href="\">F</a>
           </li>
           <li>
-            <a href="/">P</a>
+            <a href="\">P</a>
           </li>
           <li>
-            <a href="/">G</a>
+            <a href="mailto:christinenicolem96@gmail.com">G</a>
           </li>
         </ul>
       </Icons>

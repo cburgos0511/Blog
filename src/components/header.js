@@ -1,7 +1,7 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Head = styled.header`
   background: #fcfcfc;
@@ -65,24 +65,24 @@ const navbar = () => {
   return (
     <Ul>
       <li>
-        <Link activeClassName="active" to="/">
+        <AniLink activeClassName="active" fade to="/">
           Home
-        </Link>
+        </AniLink>
       </li>
       <li>
-        <Link activeClassName="active" to="/about/">
+        <AniLink activeClassName="active" fade to="about">
           About
-        </Link>
+        </AniLink>
       </li>
       <li>
-        <Link activeClassName="active" to="/blog/">
+        <AniLink activeClassName="active" fade to="blog">
           Blogs
-        </Link>
+        </AniLink>
       </li>
       <li>
-        <Link activeClassName="active" to="/projects/">
+        <AniLink activeClassName="active" fade to="projects">
           Projects
-        </Link>
+        </AniLink>
       </li>
     </Ul>
   )
@@ -90,16 +90,8 @@ const navbar = () => {
 
 const Header = () => (
   <Head>
-    <nav class="navbar">{navbar()}</nav>
+    <nav className="navbar">{navbar()}</nav>
   </Head>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

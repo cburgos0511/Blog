@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    name: `Christine Nicole Burgos`,
-    title: `In the Burgos House`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    name: `Intheburgoshouse.netlify.com`,
+    title: ``,
+    description: ``,
+    author: `Christine Burgos`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,16 +33,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#F4A261`,
-        theme_color: `#F4A261`,
+        background_color: `#F3f3f3`,
+        theme_color: `#F3f3f3`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: ``,
       },
     },
     `gatsby-plugin-offline`,

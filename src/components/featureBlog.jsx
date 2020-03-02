@@ -68,8 +68,8 @@ const FeatureBlog = ({ data, title }) => {
       </div>
       <ImageList>
         {data.edges.slice(0, 2).map(doc => (
-          <Link to={`/${doc.node.id}/`}>
-            <li key={doc.node.id}>
+          <Link key={doc.node.id} to={`/${doc.node.id}/`}>
+            <li>
               <div className="img-wrapper">
                 <Img
                   className="blog-img"
@@ -77,8 +77,6 @@ const FeatureBlog = ({ data, title }) => {
                 />
               </div>
               <h6>{doc.node.category}</h6>
-              {/* || */}
-              <h6>{doc.node.Category}</h6>
               <h2>{doc.node.title}</h2>
               {/* <p>{doc.node.description}</p> */}
             </li>
