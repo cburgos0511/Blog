@@ -4,6 +4,7 @@ module.exports = {
     title: ``,
     description: ``,
     author: `Christine Burgos`,
+    icon: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -43,7 +44,7 @@ module.exports = {
         background_color: `#F3f3f3`,
         theme_color: `#F3f3f3`,
         display: `minimal-ui`,
-        icon: ``,
+        icon: `src/images/js.jpg`,
       },
     },
     `gatsby-plugin-offline`,
