@@ -35,6 +35,24 @@ const Welcome = styled.div`
       line-height: 1.8;
     }
   }
+  @media (max-width: 768px) {
+    .intro {
+      margin: 22vw 0 2rem 0;
+
+      .inline {
+        height: 15vw;
+        font-size: 14vw;
+        margin: 0;
+        div {
+          height: 5vw;
+        }
+      }
+    }
+    .little-about-me {
+      margin: 0;
+      width: 100%;
+    }
+  }
 `
 
 const Icons = styled.div`
@@ -66,6 +84,12 @@ const Icons = styled.div`
           color: #97bdb9;
         }
       }
+    }
+  }
+  @media (max-width: 768px) {
+    width: 40vw;
+    ul {
+      justify-content: space-around;
     }
   }
 `
@@ -162,8 +186,8 @@ export const featureQuery = graphql`
           }
           img {
             childImageSharp {
-              fixed(width: 575, height: 425) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 900) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -183,8 +207,8 @@ export const featureQuery = graphql`
           }
           img {
             childImageSharp {
-              fixed(width: 575, height: 425) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 900) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

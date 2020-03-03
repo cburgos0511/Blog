@@ -70,6 +70,25 @@ const IndividualProject = styled.div`
       line-height: 1.5rem;
     }
   }
+  @media (max-width: 768px) {
+    .project-content {
+      width: 90%;
+    }
+    .project-title {
+      width: 80%;
+      h1 {
+        font-size: 10vw;
+      }
+      h6 {
+        width: 60%;
+        font-size: 3vw;
+        margin-left: 40%;
+        &::before {
+          background: transparent;
+        }
+      }
+    }
+  }
 `
 export const query = graphql`
   query ProjectTemplate($id: String!) {

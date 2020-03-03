@@ -22,13 +22,13 @@ const IndividualBlog = styled.div`
       font-size: 14px;
       font-weight: 500;
       text-align: right;
-      width: 20%;
-      margin-left: 80%;
+      width: 30%;
+      margin-left: 60%;
       &::before {
         content: "";
         position: absolute;
         top: 50%;
-        left: 10%;
+        left: 35%;
         height: 1px;
         width: 20px;
         background: #525252;
@@ -67,6 +67,25 @@ const IndividualBlog = styled.div`
     p {
       font-weight: 300;
       line-height: 1.5rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .blog-content {
+      width: 90%;
+    }
+    .article-title {
+      width: 80%;
+      h1 {
+        font-size: 10vw;
+      }
+      h6 {
+        width: 60%;
+        font-size: 3vw;
+        margin-left: 40%;
+        &::before {
+          background: transparent;
+        }
+      }
     }
   }
 `

@@ -9,6 +9,11 @@ const Head = styled.header`
     width: 50%;
     margin: 0 auto 0 auto;
   }
+  @media (max-width: 768px) {
+    .navbar {
+      width: 100%;
+    }
+  }
 `
 
 const Ul = styled.ul`
@@ -31,6 +36,7 @@ const Ul = styled.ul`
       font-family: Roboto;
       font-size: 16px;
       font-weight: 800;
+
       &::before {
         content: "";
         position: absolute;

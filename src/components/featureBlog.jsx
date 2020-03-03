@@ -8,7 +8,7 @@ const FeatureContainer = styled.div`
   position: relative;
   &::before {
     content: "";
-    top: -30%;
+    top: -10rem;
     position: absolute;
     width: 20vw;
     height: 1.2px;
@@ -17,18 +17,32 @@ const FeatureContainer = styled.div`
     transform: translate(-50%);
   }
   .title-wrap {
-    width: 50%;
+    width: 70%;
     margin-top: 30%;
     margin-left: 5vw;
 
     .title {
       font-family: PT serif;
-      font-size: 10vh;
+      font-size: 12vh;
       font-weight: 400;
+    }
+  }
+  @media (max-width: 768px) {
+    &::before {
+      content: "";
+      top: -20px;
+    }
+    .title-wrap {
+      margin-top: 20%;
+      text-align: center;
+      .title {
+        font-size: 8vw;
+      }
     }
   }
 `
 const ImageList = styled.ul`
+  margin-left: 0;
   display: flex;
   flex-flow: row wrap;
   margin-top: 15vh;
@@ -38,6 +52,7 @@ const ImageList = styled.ul`
     text-decoration: none;
     color: #000;
     margin-left: 18px;
+    width: 46%;
     li {
       list-style: none;
       h6 {
@@ -55,7 +70,23 @@ const ImageList = styled.ul`
       }
       .img-wrapper {
         overflow: hidden;
+        .blog-img {
+          transition: all 2000ms cubic-bezier(0.35, 0.9, 0.5, 1);
+          width: 100%;
+          margin: 0;
+          &:hover {
+            transform: scale(1.1);
+            z-index: 2;
+            box-shadow: 3px 20px 78px -50px rgba(0, 0, 0, 0.75);
+          }
+        }
       }
+    }
+  }
+  @media (max-width: 768px) {
+    a {
+      width: 100%;
+      margin: 10px 0 90px 0;
     }
   }
 `
@@ -73,7 +104,7 @@ const FeatureBlog = ({ data, title }) => {
               <div className="img-wrapper">
                 <Img
                   className="blog-img"
-                  fixed={doc.node.img.childImageSharp.fixed}
+                  fluid={doc.node.img.childImageSharp.fluid}
                 />
               </div>
               <h6>{doc.node.category}</h6>

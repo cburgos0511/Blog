@@ -6,12 +6,13 @@ import styled from "styled-components"
 import "./pages.css"
 
 const ImageList = styled.ul`
+  margin-left: 0;
   display: flex;
   flex-flow: row wrap;
   a {
     text-decoration: none;
     color: #000;
-    margin-left: 18px;
+    margin: auto;
     li {
       list-style: none;
       h6 {
@@ -29,7 +30,26 @@ const ImageList = styled.ul`
       }
       .img-wrapper {
         overflow: hidden;
+        .blog-img {
+          transition: all 2000ms cubic-bezier(0.35, 0.9, 0.5, 1);
+          width: 100%;
+          margin: 0;
+          &:hover {
+            transform: scale(1.1);
+            z-index: 2;
+            box-shadow: 3px 20px 78px -50px rgba(0, 0, 0, 0.75);
+          }
+        }
       }
+    }
+  }
+  @media (max-width: 388px) {
+    img {
+      height: 80%;
+      width: 80%;
+    }
+    a {
+      margin-bottom: 5.5rem;
     }
   }
 `

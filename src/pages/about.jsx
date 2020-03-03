@@ -14,8 +14,8 @@ export const bioQuery = graphql`
           author
           img {
             childImageSharp {
-              fixed(width: 500, height: 600) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -33,7 +33,7 @@ const About = ({ data }) => (
           <h1 className="header">{doc.node.author}</h1>
           <div className="container-about">
             <div className="about-img">
-              <Img fixed={doc.node.img.childImageSharp.fixed} />
+              <Img fluid={doc.node.img.childImageSharp.fluid} />
             </div>
             <div className="content-wrapper">
               <ReactMarkdown

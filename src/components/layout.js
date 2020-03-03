@@ -5,6 +5,15 @@ import Header from "./header"
 import "./layout.css"
 import styled from "styled-components"
 
+const Main = styled.main`
+  margin: 0 auto 20vw auto;
+  max-width: 90vw;
+  padding: 0 1.0875rem 1.45rem;
+  @media (max-width: 378px) {
+    padding: 0;
+    max-width: 98vw;
+  }
+`
 const Footer = styled.footer`
   position: relative;
   margin-top: 0vh;
@@ -15,6 +24,7 @@ const FootContent = styled.ul`
     margin-top: 30px;
     height: 15vh;
     position: relative;
+
     .square {
       position: absolute;
       top: 20%;
@@ -39,10 +49,43 @@ const FootContent = styled.ul`
       }
     }
   }
+  @media (max-width: 768px) {
+    .square-wrap {
+      height: 15vh;
+      margin: 30px auto 0 auto;
+      position: relative;
+
+      .square {
+        position: absolute;
+        top: 20%;
+        left: 48%;
+        width: 30px;
+        height: 30px;
+        border: 2px #97bdb9 solid;
+        transform: rotate(45deg);
+      }
+    }
+    .info {
+      text-align: center;
+      ul {
+        margin-left: 0;
+        li {
+          list-style: none;
+          font-size: 14px;
+
+          a {
+            text-decoration: none;
+            color: #97bdb9;
+          }
+        }
+      }
+    }
+  }
 `
 const Icons = styled.div`
   position: relative;
   ul {
+    margin-left: 0;
     position: absolute;
     display: flex;
     left: 50%;
@@ -114,14 +157,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto 20vh auto`,
-          maxWidth: "90vw",
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
+      <div>
+        <Main>{children}</Main>
       </div>
       <Footer>{footbar()}</Footer>
       <Icons>

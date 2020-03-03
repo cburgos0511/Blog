@@ -26,9 +26,7 @@ const ProjectList = styled.ul`
     text-decoration: none;
     color: #000;
   }
-  .lefty {
-    justify-content: flex-end;
-  }
+
   li {
     position: relative;
     display: flex;
@@ -46,6 +44,7 @@ const ProjectList = styled.ul`
       background: #6d8a87;
     }
     .img-wrap {
+      width: 80%;
       &:hover {
         animation: ${blur} 1s linear;
       }
@@ -58,6 +57,7 @@ const ProjectList = styled.ul`
     }
     .cont {
       margin-top: 10vh;
+      width: 50%;
       h2 {
         font-family: PT serif;
         font-size: 6vh;
@@ -67,6 +67,25 @@ const ProjectList = styled.ul`
         font-family: PT serif;
         margin-top: 4vh;
         width: 20vw;
+        margin-block-start: 0;
+        margin-block-end: 0;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    li {
+      flex-direction: column;
+      margin-left: 8vw;
+    }
+    .cont {
+      margin-top: 8vh;
+      width: 100%;
+      h2 {
+        font-size: 8vw;
+        width: 80vw !important;
+      }
+      p {
+        width: 80vw !important;
       }
     }
   }
@@ -86,8 +105,8 @@ export const articleQuery = graphql`
           }
           img {
             childImageSharp {
-              fixed(width: 700, height: 525) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 600, maxHeight: 550) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -107,7 +126,7 @@ const Project = ({ data }) => (
             <Link key={doc.node.id} to={`/${doc.node.id}/`}>
               <li>
                 <div className="img-wrap">
-                  <Img fixed={doc.node.img.childImageSharp.fixed} />
+                  <Img fluid={doc.node.img.childImageSharp.fluid} />
                 </div>
                 <div className="right cont">
                   <h2>{doc.node.title}</h2>
@@ -125,7 +144,7 @@ const Project = ({ data }) => (
                   <p>{doc.node.description}</p>
                 </div>
                 <div className="img-wrap">
-                  <Img fixed={doc.node.img.childImageSharp.fixed} />
+                  <Img fluid={doc.node.img.childImageSharp.fluid} />
                 </div>
               </li>
             </Link>
