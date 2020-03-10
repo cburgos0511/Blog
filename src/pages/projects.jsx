@@ -36,7 +36,6 @@ const ProjectList = styled.ul`
     margin-top: 20vh;
     flex-direction: ${props => (props.id % 2 === 0 ? "row" : "row-reverse")};
 
-    flex-direction: row-reverse;
     &:after {
       content: "";
       opacity: 0.36;
