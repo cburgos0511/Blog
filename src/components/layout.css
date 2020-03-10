@@ -600,6 +600,7 @@ code {
   padding-top: 0.2em;
   padding-bottom: 0.2em;
 }
+
 pre code {
   background: none;
   line-height: 1.42;
@@ -621,4 +622,8 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+ul {
+  margin: 0;
 }

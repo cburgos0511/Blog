@@ -104,7 +104,7 @@ const Home = ({ data }) => (
           <div>i</div>
           <div>t</div>
           <div>h</div>
-          <div>. </div>
+          <div>.&nbsp; </div>
           <div>F</div>
           <div>a</div>
           <div>m</div>
@@ -118,7 +118,7 @@ const Home = ({ data }) => (
           <div>a</div>
           <div>p</div>
           <div>s</div>
-          <div>. </div>
+          <div>.&nbsp; </div>
           <div>A</div>
           <div>r</div>
           <div>t</div>

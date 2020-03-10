@@ -32,7 +32,7 @@ const FootContent = styled.ul`
       width: 30px;
       height: 30px;
       border: 2px #97bdb9 solid;
-      transform: rotate(45deg);
+      transform: translate(-50%, -50%) rotate(45deg);
     }
   }
   .info {
@@ -58,11 +58,11 @@ const FootContent = styled.ul`
       .square {
         position: absolute;
         top: 20%;
-        left: 48%;
+        left: 50%;
         width: 30px;
         height: 30px;
         border: 2px #97bdb9 solid;
-        transform: rotate(45deg);
+        transform: translate(-50%, -50%) rotate(45deg);
       }
     }
     .info {

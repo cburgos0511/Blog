@@ -22,6 +22,7 @@ const blur = keyframes`
 const ProjectList = styled.ul`
   position: relative;
   margin: 15vh 0 15vh 0;
+
   a {
     text-decoration: none;
     color: #000;
@@ -32,6 +33,11 @@ const ProjectList = styled.ul`
     display: flex;
     padding-top: 20vh;
     margin-top: 20vh;
+
+    &:nth-child(${props => props.props}) {
+      flex-direction: row-reverse;
+    }
+
     &:after {
       content: "";
       opacity: 0.36;
@@ -43,18 +49,19 @@ const ProjectList = styled.ul`
       height: 1.5px;
       background: #6d8a87;
     }
+
     .img-wrap {
-      width: 80%;
+      width: 60%;
       &:hover {
         animation: ${blur} 1s linear;
       }
     }
     .right {
-      margin-left: 5vw;
+      margin-left: 10vw;
     }
-    .left {
+    /* .left {
       margin-right: 5vw;
-    }
+    } */
     .cont {
       margin-top: 10vh;
       width: 50%;
@@ -105,7 +112,7 @@ export const articleQuery = graphql`
           }
           img {
             childImageSharp {
-              fluid(maxWidth: 600, maxHeight: 550) {
+              fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -119,39 +126,25 @@ export const articleQuery = graphql`
 const Project = ({ data }) => (
   <Layout>
     <h1 className="header">Projects</h1>
-    <ProjectList>
-      {data.allStrapiProject.edges.map((doc, i) => {
-        const project =
-          i % 2 === 0 ? (
-            <Link key={doc.node.id} to={`/${doc.node.id}/`}>
-              <li>
-                <div className="img-wrap">
-                  <Img fluid={doc.node.img.childImageSharp.fluid} />
-                </div>
-                <div className="right cont">
-                  <h2>{doc.node.title}</h2>
-                  {/* <h6 className="creator">{doc.node.builder.username}</h6> */}
-                  <p>{doc.node.description}</p>
-                </div>
-              </li>
-            </Link>
-          ) : (
-            <Link key={doc.node.id} to={`/${doc.node.id}/`}>
-              <li className="lefty" key={doc.node.id}>
-                <div className="cont left">
-                  <h2>{doc.node.title}</h2>
-                  {/* <h6 className="creator">{doc.node.builder.username}</h6> */}
-                  <p>{doc.node.description}</p>
-                </div>
-                <div className="img-wrap">
-                  <Img fluid={doc.node.img.childImageSharp.fluid} />
-                </div>
-              </li>
-            </Link>
-          )
-        return project
-      })}
-    </ProjectList>
+
+    {data.allStrapiProject.edges.map((doc, i) => {
+      return (
+        <ProjectList props={i}>
+          <Link key={doc.node.id} to={`/${doc.node.id}/`}>
+            <li>
+              <div className="img-wrap">
+                <Img fluid={doc.node.img.childImageSharp.fluid} />
+              </div>
+              <div className="right cont">
+                <h2>{doc.node.title}</h2>
+                {/* <h6 className="creator">{doc.node.builder.username}</h6> */}
+                <p>{doc.node.description}</p>
+              </div>
+            </li>
+          </Link>
+        </ProjectList>
+      )
+    })}
   </Layout>
 )
 
