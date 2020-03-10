@@ -1,7 +1,7 @@
 // import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { Link } from "gatsby"
 
 const Head = styled.header`
   background: #fcfcfc;
@@ -71,24 +71,24 @@ const navbar = () => {
   return (
     <Ul>
       <li>
-        <AniLink activeClassName="active" fade to="/">
+        <Link activeClassName="active" to="/">
           Home
-        </AniLink>
+        </Link>
       </li>
       <li>
-        <AniLink activeClassName="active" fade to="about">
+        <Link activeClassName="active" to="/about">
           About
-        </AniLink>
+        </Link>
       </li>
       <li>
-        <AniLink activeClassName="active" fade to="blog">
+        <Link activeClassName="active" to="/blog">
           Blogs
-        </AniLink>
+        </Link>
       </li>
       <li>
-        <AniLink activeClassName="active" fade to="projects">
+        <Link activeClassName="active" to="/projects">
           Projects
-        </AniLink>
+        </Link>
       </li>
     </Ul>
   )
