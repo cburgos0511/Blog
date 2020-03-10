@@ -59,7 +59,7 @@ const Blog = ({ data }) => (
     <h1 className="header">Blog</h1>
     <ImageList>
       {data.allStrapiArticle.edges.map(doc => (
-        <Link key={doc.node.id} to={`/${doc.node.id}/`}>
+        <Link key={doc.node.id} to={`/${doc.node.id}`}>
           <li>
             <div className="img-wrapper">
               <Img

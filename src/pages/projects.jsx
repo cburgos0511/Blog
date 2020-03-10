@@ -24,6 +24,7 @@ const ProjectList = styled.ul`
   margin: 15vh 0 15vh 0;
 
   a {
+    position: relative;
     text-decoration: none;
     color: #000;
   }
@@ -33,10 +34,7 @@ const ProjectList = styled.ul`
     display: flex;
     padding-top: 20vh;
     margin-top: 20vh;
-
-    &:nth-child(${props => props.props % 2 === 0}) {
-      flex-direction: row-reverse;
-    }
+    flex-direction: ${props => (props.id % 2 === 0 ? "row" : "row-reverse")};
 
     &:after {
       content: "";
@@ -59,9 +57,7 @@ const ProjectList = styled.ul`
     .right {
       margin-left: 10vw;
     }
-    /* .left {
-      margin-right: 5vw;
-    } */
+
     .cont {
       margin-top: 10vh;
       width: 50%;
@@ -134,8 +130,8 @@ const Project = ({ data }) => (
 
     {data.allStrapiProject.edges.map((doc, i) => {
       return (
-        <ProjectList props={i}>
-          <Link key={doc.node.id} to={`/${doc.node.id}/`}>
+        <ProjectList key={doc.node.id} id={i}>
+          <Link to={`/${doc.node.id}`}>
             <li>
               <div className="img-wrap">
                 <Img fluid={doc.node.img.childImageSharp.fluid} />
