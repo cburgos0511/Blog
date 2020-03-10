@@ -37,7 +37,7 @@ const Welcome = styled.div`
   }
   @media (max-width: 768px) {
     .intro {
-      margin: 22vw 0 2rem 0;
+      margin: 22vw auto 4rem 2rem;
 
       .inline {
         height: 15vw;
@@ -49,8 +49,11 @@ const Welcome = styled.div`
       }
     }
     .little-about-me {
-      margin: 0;
-      width: 100%;
+      margin: auto;
+      width: 80%;
+      h2 {
+        font-size: 17px;
+      }
     }
   }
 `
@@ -141,13 +144,13 @@ const Home = ({ data }) => (
       <Icons>
         <ul>
           <li>
-            <a href="\">In</a>
+            <a href="https://www.instagram.com/intheburgoshouse/">In</a>
           </li>
           <li>
-            <a href="\">F</a>
+            <a href="https://www.facebook.com/christine.mancuso.14">F</a>
           </li>
           <li>
-            <a href="\">P</a>
+            <a href="https://www.pinterest.com/christinenm/">P</a>
           </li>
           <li>
             <a href="mailto:christinenicolem96@gmail.com">G</a>

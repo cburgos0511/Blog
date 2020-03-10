@@ -12,7 +12,7 @@ const ImageList = styled.ul`
   a {
     text-decoration: none;
     color: #000;
-    margin: auto;
+    margin: 5vw auto;
     li {
       list-style: none;
       h6 {

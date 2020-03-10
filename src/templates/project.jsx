@@ -56,6 +56,7 @@ const IndividualProject = styled.div`
     position: relative;
     width: 60%;
     margin: auto;
+
     h1 {
       font-family: PT Serif;
     }
@@ -68,6 +69,9 @@ const IndividualProject = styled.div`
     p {
       font-weight: 300;
       line-height: 1.5rem;
+      img {
+        margin: 4rem 0 4rem 0;
+      }
     }
   }
   @media (max-width: 768px) {
@@ -104,7 +108,7 @@ export const query = graphql`
       }
       img {
         childImageSharp {
-          fluid(maxWidth: 1000, maxHeight: 950) {
+          fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
