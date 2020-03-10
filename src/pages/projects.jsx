@@ -34,7 +34,7 @@ const ProjectList = styled.ul`
     padding-top: 20vh;
     margin-top: 20vh;
 
-    &:nth-child(${props => props.props}) {
+    &:nth-child(${props => props.props % 2 === 0}) {
       flex-direction: row-reverse;
     }
 
@@ -82,8 +82,13 @@ const ProjectList = styled.ul`
   @media (max-width: 768px) {
     li {
       flex-direction: column;
-      margin-left: 8vw;
+      margin-left: auto;
+      margin-right: auto;
+      .img-wrap {
+        width: 100%;
+      }
     }
+
     .cont {
       margin-top: 8vh;
       width: 100%;
