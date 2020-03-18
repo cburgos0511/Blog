@@ -91,7 +91,7 @@ const ImageList = styled.ul`
   }
 `
 
-const FeatureBlog = ({ data, title }) => {
+const FeatureProject = ({ data, title }) => {
   return (
     <FeatureContainer>
       <div className="title-wrap">
@@ -104,7 +104,7 @@ const FeatureBlog = ({ data, title }) => {
               <div className="img-wrapper">
                 <Img
                   className="blog-img"
-                  fluid={doc.node.articleImg.childImageSharp.fluid}
+                  fluid={doc.node.projectImg.childImageSharp.fluid}
                 />
               </div>
               <h6>{doc.node.category}</h6>
@@ -118,4 +118,4 @@ const FeatureBlog = ({ data, title }) => {
   )
 }
 
-export default FeatureBlog
+export default FeatureProject

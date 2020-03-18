@@ -111,7 +111,7 @@ export const articleQuery = graphql`
           builder {
             username
           }
-          img {
+          projectImg {
             childImageSharp {
               fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid
@@ -134,7 +134,7 @@ const Project = ({ data }) => (
           <Link to={`/${doc.node.id}`}>
             <li>
               <div className="img-wrap">
-                <Img fluid={doc.node.img.childImageSharp.fluid} />
+                <Img fluid={doc.node.projectImg.childImageSharp.fluid} />
               </div>
               <div className="right cont">
                 <h2>{doc.node.title}</h2>

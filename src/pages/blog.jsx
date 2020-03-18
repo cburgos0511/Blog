@@ -64,7 +64,7 @@ const Blog = ({ data }) => (
             <div className="img-wrapper">
               <Img
                 className="blog-img"
-                fixed={doc.node.img.childImageSharp.fixed}
+                fixed={doc.node.articleImg.childImageSharp.fixed}
               />
             </div>
             <h6>{doc.node.category}</h6>
@@ -90,7 +90,7 @@ export const articleQuery = graphql`
           user {
             username
           }
-          img {
+          articleImg {
             childImageSharp {
               fixed(width: 375, height: 325) {
                 ...GatsbyImageSharpFixed

@@ -101,7 +101,7 @@ const ArticleTemplate = ({ data }) => (
         </h6>
       </div>
       <div className="img-wrap">
-        <Img fluid={data.strapiArticle.img.childImageSharp.fluid} />
+        <Img fluid={data.strapiArticle.articleImg.childImageSharp.fluid} />
       </div>
       <div className="blog-content">
         <ReactMarkdown
@@ -128,7 +128,7 @@ export const query = graphql`
         id
         username
       }
-      img {
+      articleImg {
         childImageSharp {
           fluid(maxWidth: 1000, maxHeight: 950) {
             ...GatsbyImageSharpFluid

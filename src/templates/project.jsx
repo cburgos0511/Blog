@@ -106,7 +106,7 @@ export const query = graphql`
         id
         username
       }
-      img {
+      projectImg {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
@@ -127,7 +127,7 @@ const ProjectTemplate = ({ data }) => (
         </h6>
       </div>
       <div className="img-wrap">
-        <Img fluid={data.strapiProject.img.childImageSharp.fluid} />
+        <Img fluid={data.strapiProject.projectImg.childImageSharp.fluid} />
       </div>
       <div className="project-content">
         <ReactMarkdown

@@ -30,7 +30,7 @@
       "model": "user",
       "via": "articles"
     },
-    "img": {
+    "articleImg": {
       "model": "file",
       "via": "related",
       "plugin": "upload",

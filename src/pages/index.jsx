@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 import "./pages.css"
 import FeatureBlog from "../components/featureBlog"
+import FeatureProject from "../components/featureProject"
 
 const Welcome = styled.div`
   .intro {
@@ -170,7 +171,7 @@ const Home = ({ data }) => (
       </div>
     </Welcome>
     <FeatureBlog data={data.allStrapiArticle} title="Latest Blogs" />
-    <FeatureBlog data={data.allStrapiProject} title="Latest Projects" />
+    <FeatureProject data={data.allStrapiProject} title="Latest Projects" />
   </Layout>
 )
 
@@ -187,7 +188,7 @@ export const featureQuery = graphql`
           user {
             username
           }
-          img {
+          articleImg {
             childImageSharp {
               fluid(maxWidth: 900) {
                 ...GatsbyImageSharpFluid
@@ -208,7 +209,7 @@ export const featureQuery = graphql`
           builder {
             username
           }
-          img {
+          projectImg {
             childImageSharp {
               fluid(maxWidth: 900) {
                 ...GatsbyImageSharpFluid
