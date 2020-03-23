@@ -32,6 +32,12 @@ module.exports = {
         queryLimit: 1000,
       },
     },
+    {
+      resolve: "gatsby-plugin-page-transitions",
+      options: {
+        transitionTime: 500,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

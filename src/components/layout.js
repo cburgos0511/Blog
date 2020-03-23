@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import styled from "styled-components"
+import PageTransition from "gatsby-plugin-page-transitions"
 
 const Main = styled.main`
   margin: 0 auto 20vw auto;
@@ -155,7 +156,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <PageTransition transitionTime={600}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <Main>{children}</Main>
@@ -177,7 +178,7 @@ const Layout = ({ children }) => {
           </li>
         </ul>
       </Icons>
-    </>
+    </PageTransition>
   )
 }
 
